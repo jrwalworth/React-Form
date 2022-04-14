@@ -44,6 +44,9 @@ input {
 .det-sect {
     text-align:left;
     margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted grey;
 }
 
 .col-25 {
