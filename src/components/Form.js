@@ -7,7 +7,11 @@ const Form = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+<<<<<<< HEAD
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
+=======
+    const [error, setError] = useState("");
+>>>>>>> 5744fbe (Set error state message.)
 
     const createUser = (e) => {
         e.preventDefault();
@@ -21,7 +25,12 @@ const Form = (props) => {
             console.log('Form not submitted for', firstName)
             
         } else {
+<<<<<<< HEAD
             console.log('Form submitted for ', firstName)
+=======
+            console.log('Form not submitted.')
+            setError('Please fill in the form to submit.')
+>>>>>>> 5744fbe (Set error state message.)
         }
         setFirstName('');
         setLastName('');
@@ -41,7 +50,14 @@ const Form = (props) => {
 
     return (
         <div className="myForm">
+<<<<<<< HEAD
             { formMessage() }
+=======
+            {error && <p className="error">{error}</p>}
+            {firstName && firstName < 5 && <p>First name must contain a value.</p>}
+            {lastName && lastName < 5 ? <p>Last name must contain a value.</p> : null}
+            {confirmPassword && password != confirmPassword && <p>Passwords must match.</p>}
+>>>>>>> 5744fbe (Set error state message.)
             <form onSubmit={ createUser } >
                 {firstName && firstName.length < 2 && <span>First name must contain a value.</span>}
                 <section className="form-sect">
@@ -94,7 +110,6 @@ const Form = (props) => {
                         <h4>Email:</h4>
                         <p>{email}</p>
                     </section>
-                    
                     <section className="det-sect">
                         <h4>Password:</h4> 
                         <p>{password}</p>
